@@ -1,5 +1,10 @@
 package by.ld1995tut.Frame;
 
+import by.ld1995tut.Dao.ConnectionFactory;
+import by.ld1995tut.Dao.Person;
+import by.ld1995tut.Dao.PersonDao;
+import by.ld1995tut.Dao.PersonDaoJdbcImpl;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,6 +13,8 @@ public class Frame extends JFrame
 {
     private FrameRegistration frameRegistration = new FrameRegistration();
     private FrameSearch frameSearch = new FrameSearch();
+//    private Person person = new Person();
+    private static PersonDao personDaoDao = new PersonDaoJdbcImpl(ConnectionFactory.getInstance());
 
     public Frame()
     {
@@ -22,6 +29,7 @@ public class Frame extends JFrame
             public void actionPerformed(ActionEvent e)
             {
                 switchForm();
+                frameRegistration.cleanForm();
             }
         });
         frameSearch.getNext().addActionListener(new ActionListener()
@@ -37,8 +45,12 @@ public class Frame extends JFrame
             @Override
             public void actionPerformed(ActionEvent e)
             {
-
-
+                if (frameRegistration.getPerson().control())
+                {
+                    personDaoDao.insert(frameRegistration.getPerson());
+                    frameRegistration.cleanForm();
+                }
+                else errorMessage();
             }
         });
         frameSearch.getSearch().addActionListener(new ActionListener()
@@ -65,6 +77,13 @@ public class Frame extends JFrame
 
             }
         });
+        frameSearch.getSave().addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
 
     private void switchForm()
@@ -80,4 +99,10 @@ public class Frame extends JFrame
         getContentPane().revalidate();
         getContentPane().repaint();
     }
+
+    private void errorMessage()
+    {
+        JOptionPane.showMessageDialog(getRootPane(),"Поле заполнено неверно","Внимание",JOptionPane.INFORMATION_MESSAGE);
+    }
+
 }

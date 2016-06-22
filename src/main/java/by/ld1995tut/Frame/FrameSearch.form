@@ -29,11 +29,13 @@
             <constraints/>
             <properties>
               <font size="14"/>
+              <minimumSize width="150" height="30"/>
               <model>
                 <item value="ФИО"/>
                 <item value="Дата приёма"/>
+                <item value="Название отделения"/>
               </model>
-              <preferredSize width="200" height="26"/>
+              <preferredSize width="250" height="26"/>
             </properties>
           </component>
           <hspacer id="b11a2">
@@ -93,7 +95,7 @@
           </component>
           <component id="2235e" class="javax.swing.JButton" binding="next">
             <constraints>
-              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
               <gridbag weightx="0.0" weighty="0.0"/>
             </constraints>
             <properties>
@@ -104,7 +106,7 @@
           </component>
           <vspacer id="f1e2d">
             <constraints>
-              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
               <gridbag weightx="0.0" weighty="0.0"/>
             </constraints>
           </vspacer>
@@ -114,6 +116,22 @@
               <gridbag weightx="0.0" weighty="0.0"/>
             </constraints>
           </hspacer>
+          <vspacer id="dad3b">
+            <constraints>
+              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+          </vspacer>
+          <component id="fb9e5" class="javax.swing.JButton" binding="save">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <font size="14"/>
+              <text value="Сохранить"/>
+            </properties>
+          </component>
         </children>
       </grid>
       <grid id="accee" binding="result" layout-manager="BorderLayout" hgap="0" vgap="0">
@@ -126,12 +144,9 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="5cce0" class="javax.swing.JList" binding="patientList">
+              <component id="ec0e6" class="javax.swing.JTable" binding="tablePerson">
                 <constraints/>
-                <properties>
-                  <alignmentX value="0.5"/>
-                  <alignmentY value="0.5"/>
-                </properties>
+                <properties/>
               </component>
             </children>
           </scrollpane>

@@ -4,7 +4,7 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DocumentFilter;
 
-public class CheckingFilling extends DocumentFilter
+public class NumberFilling extends DocumentFilter
 {
     @Override
     public void replace(DocumentFilter.FilterBypass fb, int offset, int length,
@@ -12,12 +12,12 @@ public class CheckingFilling extends DocumentFilter
 
             throws BadLocationException
     {
-        super.replace(fb, offset, length, text.replaceAll("[^А-ЯЁа-яё ]",""), attr);
+        super.replace(fb, offset, length, text.replaceAll("[\\D]",""), attr);
     }
 
     @Override
     public void insertString(FilterBypass fb, int offset, String string, AttributeSet attr) throws BadLocationException
     {
-        fb.insertString(offset, string.replaceAll("[^А-ЯЁа-яё]",""), attr);
+        fb.insertString(offset, string.replaceAll("[\\D]",""), attr);
     }
 }

@@ -3,6 +3,8 @@
     <output-path>$PROJECT_DIR$/out/artifacts/MedYchet</output-path>
     <root id="archive" name="MedYchet.jar">
       <element id="module-output" name="PP" />
+      <element id="library" level="project" name="mysql-connector-java-5.1.39-bin" />
+      <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.39" />
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
       </element>
