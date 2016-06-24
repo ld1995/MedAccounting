@@ -13,8 +13,8 @@ public class ConnectionFactory
 {
     private static  final String MYSQLDRIVER = "com.mysql.jdbc.Driver";
     private static  final String URL = "jdbc:mysql://192.168.0.38:3306/patient";
-    private static  final String USERNAME = "root";
-    private static  final String PASSWORD = "root";
+    private static  final String USERNAME = "user";
+    private static  final String PASSWORD = "bsmp1935";
     private static ConnectionFactory instance;
 
     private ConnectionFactory() {

@@ -3,7 +3,6 @@ package by.ld1995tut.Frame;
 import by.ld1995tut.Dao.Person;
 import by.ld1995tut.mics.CheckingFilling;
 import by.ld1995tut.mics.NumberFilling;
-
 import javax.swing.*;
 import javax.swing.text.AbstractDocument;
 import javax.swing.text.DefaultFormatterFactory;
@@ -125,7 +124,8 @@ public class FrameRegistration extends JPanel {
         return timestamp;
     }
 
-    private java.sql.Date getAgePerson() {
+    private java.sql.Date getAgePerson()
+    {
         Date docAge = null;
         try {
             docAge = dateHB.parse(getAge());
@@ -136,7 +136,8 @@ public class FrameRegistration extends JPanel {
         return sqlDate;
     }
 
-    public Person getPerson() {
+    public Person getPerson()
+    {
         Person person = new Person(getWards(), getNumber(),
                 getDatePerson(), getLastName(),
                 getNamePerson(), getSecondName(),

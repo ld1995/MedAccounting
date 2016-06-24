@@ -1,13 +1,17 @@
 package by.ld1995tut.Frame;
 
+import by.ld1995tut.Dao.Person;
 import by.ld1995tut.mics.CheckingFilling;
 import by.ld1995tut.mics.NumberFilling;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.text.AbstractDocument;
 import javax.swing.text.Document;
 import javax.swing.text.JTextComponent;
 import java.awt.*;
+import java.util.*;
+import java.util.List;
 
 public class FrameSearch extends JPanel
 {
@@ -58,6 +62,13 @@ public class FrameSearch extends JPanel
 
     public void setNavigationPanel(Component component) {
         this.navigationPanel.add(component);
+    }
+
+    public void setTablePerson(List<Person> list) {
+        Vector<Person> vector = new Vector<>(list);
+        DefaultTableModel aModel = (DefaultTableModel) tablePerson.getModel();
+        aModel.addRow(vector);
+        this.tablePerson.setModel(aModel);
     }
 
     public String getSelection() {

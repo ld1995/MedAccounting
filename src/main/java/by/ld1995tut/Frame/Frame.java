@@ -28,6 +28,7 @@ public class Frame extends JFrame
             @Override
             public void actionPerformed(ActionEvent e)
             {
+                frameSearch.setTablePerson(personDaoDao.getAll());
                 switchForm();
                 frameRegistration.cleanForm();
             }
