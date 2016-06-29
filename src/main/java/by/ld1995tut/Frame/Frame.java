@@ -14,7 +14,7 @@ public class Frame extends JFrame
     private FrameRegistration frameRegistration = new FrameRegistration();
     private FrameSearch frameSearch = new FrameSearch();
 //    private Person person = new Person();
-    private static PersonDao personDaoDao = new PersonDaoJdbcImpl(ConnectionFactory.getInstance());
+    private static PersonDao personDao = new PersonDaoJdbcImpl(ConnectionFactory.getInstance());
 
     public Frame()
     {
@@ -28,7 +28,7 @@ public class Frame extends JFrame
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                frameSearch.setTablePerson(personDaoDao.getAll());
+//                frameSearch.setTablePerson(personDaoDao.getAll());
                 switchForm();
                 frameRegistration.cleanForm();
             }
@@ -48,7 +48,7 @@ public class Frame extends JFrame
             {
                 if (frameRegistration.getPerson().control())
                 {
-                    personDaoDao.insert(frameRegistration.getPerson());
+                    personDao.insert(frameRegistration.getPerson());
                     frameRegistration.cleanForm();
                 }
                 else errorMessage();
@@ -59,7 +59,8 @@ public class Frame extends JFrame
             @Override
             public void actionPerformed(ActionEvent e)
             {
-
+                System.out.println(personDao.getByFIO(frameSearch.getPerson().getLastName(),
+                        frameSearch.getPerson().getNamePerson(), frameSearch.getPerson().getSecondName()));
             }
         });
         frameSearch.getDelete().addActionListener(new ActionListener()

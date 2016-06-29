@@ -37,6 +37,12 @@ public class Person
         this.inhabitation = inhabitation;
     }
 
+    public Person(String lastName, String namePerson, String secondName) {
+        this.lastName = lastName;
+        this.namePerson = namePerson;
+        this.secondName = secondName;
+    }
+
     public String getWards() {
         return wards;
     }

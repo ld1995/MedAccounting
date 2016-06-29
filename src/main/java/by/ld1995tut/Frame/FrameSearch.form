@@ -33,7 +33,6 @@
               <model>
                 <item value="ФИО"/>
                 <item value="Дата приёма"/>
-                <item value="Название отделения"/>
               </model>
               <preferredSize width="250" height="26"/>
             </properties>

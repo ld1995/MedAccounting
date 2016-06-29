@@ -3,6 +3,7 @@ package by.ld1995tut.Frame;
 import by.ld1995tut.Dao.Person;
 import by.ld1995tut.mics.CheckingFilling;
 import by.ld1995tut.mics.NumberFilling;
+import by.ld1995tut.mics.PersonTableModel;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -65,14 +66,39 @@ public class FrameSearch extends JPanel
     }
 
     public void setTablePerson(List<Person> list) {
-        Vector<Person> vector = new Vector<>(list);
-        DefaultTableModel aModel = (DefaultTableModel) tablePerson.getModel();
-        aModel.addRow(vector);
-        this.tablePerson.setModel(aModel);
+        PersonTableModel model = new PersonTableModel();
+        this.tablePerson.setModel(model);
     }
 
     public String getSelection() {
         String searchOptions = (String)selection.getSelectedItem();
         return searchOptions;
     }
+
+    public Person getPerson()
+    {
+        String last = "";
+        String fast = "";
+        String second = "";
+        Person person;
+        String fIO = getSelection();
+        String fIOUser[] = fIO.split("\\s+");
+        if(fIOUser.length == 3)
+        {
+            if (fIOUser[0].matches("^[А-ЯЁ][а-яё]+(-[А-ЯЁ][а-яё]+)?$"))
+               last = fIOUser[0];
+            if (fIOUser[1].matches("^[А-ЯЁ][а-яё]+$"))
+               fast = fIOUser[1];
+            if (fIOUser[2].matches("^[А-ЯЁ][а-яё]+$"))
+               second = fIOUser[2];
+
+        person = new Person(last, fast, second);
+        return person;
+        }
+        else
+        {
+          return person = new Person();
+        }
+    }
+
 }

@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface PersonDao
 {
-    Person getById();
+    Person getByFIO(String last, String fast, String secong);
 
     void insert(Person person);
 

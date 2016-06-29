@@ -8,14 +8,14 @@ import java.util.List;
 
 public class PersonDaoJdbcImpl implements PersonDao
 {
-//    public static final String SELECT_BY_ID_QUERY = "SELECT * FROM authors WHERE id = ?";
+    public static final String SELECT_BY_NAME = "SELECT * FROM patient.patient SET name = ?";
     public static final String SELECT_ALL = "SELECT * FROM patient.patient";
     public static final String INSERT = "INSERT INTO patient.patient " +
             "(wards, number, date, last, fast, second, organization, age, diagnosis, inhabitation)" +
             " VALUES (?,?,?,?,?,?,?,?,?,?)";
-//    public static final String UPDATE = "UPDATE  SET name = ?, trade_union = ? WHERE id = ?";
+    public static final String UPDATE = "UPDATE patient.patient SET wards = ?, WHERE namber = ? , SET t";
 //    public static final String DELETE_BY_ID_QUERY = "DELETE FROM authors WHERE id = ?";
-//    public static final String DELETE_ALL_QUERY = "DELETE FROM authors";
+    public static final String DELETE_ALL = "DELETE FROM patient.patient";
 
     public static final String WARDS = "Отделение";
     public static final String NUMBER= "Номер";
@@ -35,7 +35,29 @@ public class PersonDaoJdbcImpl implements PersonDao
     }
 
     @Override
-    public Person getById() {
+    public Person getByFIO(String last, String fast, String second) {
+        try (Connection connection = connectionFactory.getConnection();
+             PreparedStatement statement = (PreparedStatement) connection.prepareStatement(SELECT_BY_NAME);) {
+            statement.setString(5,last);
+            statement.setString(6,fast);
+            statement.setString(7,second);
+            try (ResultSet resultSet = statement.executeQuery();) {
+                while (resultSet.next()) {
+                    return new Person(resultSet.getString(WARDS),
+                            resultSet.getInt(NUMBER),
+                            resultSet.getTimestamp(DATE_AND_TIME),
+                            resultSet.getString(LAST),
+                            resultSet.getString(NAME),
+                            resultSet.getString(SECOND),
+                            resultSet.getDate(DATA),
+                            resultSet.getString(ORGANIZATION),
+                            resultSet.getString(DIAGNOSIS),
+                            resultSet.getString(INHABITATION));
+                }
+            }
+        } catch (Exception e) {
+            throw new DaoException(String.format("Method getById(id: '%d') has thrown an exception.", last , fast , second), e);
+        }
         return null;
     }
 
@@ -91,8 +113,24 @@ public class PersonDaoJdbcImpl implements PersonDao
 
     @Override
     public void update(Person person) {
-
+        try (Connection connection = connectionFactory.getConnection();
+             PreparedStatement statement = (PreparedStatement) connection.prepareStatement(UPDATE);) {
+            statement.setString(1, person.getWards());
+            statement.setInt(2, person.getNumber());
+            statement.setTimestamp(3, person.getDateAndTime());
+            statement.setString(4, person.getLastName());
+            statement.setString(5, person.getNamePerson());
+            statement.setString(6, person.getSecondName());
+            statement.setString(7, person.getOrganization());
+            statement.setDate(8,  person.getAge());
+            statement.setString(9, person.getDiagnosis());
+            statement.setString(10, person.getInhabitation());
+            statement.executeUpdate();
+        } catch (Exception e) {
+            throw new DaoException(String.format("Method update(author:'%s') has thrown an exception", person), e);
+        }
     }
+
 
     @Override
     public void deleteById(long id) {
@@ -101,6 +139,11 @@ public class PersonDaoJdbcImpl implements PersonDao
 
     @Override
     public void deleteAll() {
-
+        try (Connection connection = connectionFactory.getConnection();
+             Statement statement = connection.createStatement()) {
+            statement.executeUpdate(DELETE_ALL);
+        } catch (Exception e) {
+            throw new DaoException("Method deleteAll() has thrown an exception", e);
+        }
     }
 }

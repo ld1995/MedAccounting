@@ -7,15 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b757c2c6-a4d8-46b3-a8a3-353d4612cfe5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/PP_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/slf4j_api_1_6_1.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/MedYchet.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_39.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MedAccounting" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MedYchet/MedYchet.jar" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_39_bin.xml" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_39_bin__2_.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/by/ld1995tut/mics/PersonTableModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PP_jar/PP.jar" afterPath="$PROJECT_DIR$/out/artifacts/PP_jar/PP.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/ld1995tut/Dao/ConnectionFactory.class" afterPath="$PROJECT_DIR$/target/classes/by/ld1995tut/Dao/ConnectionFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/ld1995tut/Dao/DaoException.class" afterPath="$PROJECT_DIR$/target/classes/by/ld1995tut/Dao/DaoException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/ld1995tut/Dao/Person.class" afterPath="$PROJECT_DIR$/target/classes/by/ld1995tut/Dao/Person.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/ld1995tut/Dao/PersonDao.class" afterPath="$PROJECT_DIR$/target/classes/by/ld1995tut/Dao/PersonDao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/ld1995tut/Dao/PersonDaoJdbcImpl.class" afterPath="$PROJECT_DIR$/target/classes/by/ld1995tut/Dao/PersonDaoJdbcImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/ld1995tut/Frame/Frame$1.class" afterPath="$PROJECT_DIR$/target/classes/by/ld1995tut/Frame/Frame$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/ld1995tut/Frame/Frame$2.class" afterPath="$PROJECT_DIR$/target/classes/by/ld1995tut/Frame/Frame$2.class" />
@@ -27,14 +24,19 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/ld1995tut/Frame/Frame.class" afterPath="$PROJECT_DIR$/target/classes/by/ld1995tut/Frame/Frame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/ld1995tut/Frame/FrameRegistration.class" afterPath="$PROJECT_DIR$/target/classes/by/ld1995tut/Frame/FrameRegistration.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/ld1995tut/Frame/FrameSearch.class" afterPath="$PROJECT_DIR$/target/classes/by/ld1995tut/Frame/FrameSearch.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/ld1995tut/Loader$1.class" afterPath="$PROJECT_DIR$/target/classes/by/ld1995tut/Loader$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/ld1995tut/Loader.class" afterPath="$PROJECT_DIR$/target/classes/by/ld1995tut/Loader.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/ld1995tut/mics/CheckingFilling.class" afterPath="$PROJECT_DIR$/target/classes/by/ld1995tut/mics/CheckingFilling.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/ld1995tut/mics/NumberFilling.class" afterPath="$PROJECT_DIR$/target/classes/by/ld1995tut/mics/NumberFilling.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PP.iml" afterPath="$PROJECT_DIR$/PP.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/ConnectionFactory.java" afterPath="$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/ConnectionFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/Person.java" afterPath="$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/Person.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/PersonDao.java" afterPath="$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/PersonDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/PersonDaoJdbcImpl.java" afterPath="$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/PersonDaoJdbcImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/Frame.java" afterPath="$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/Frame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameRegistration.form" afterPath="$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameRegistration.form" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameRegistration.java" afterPath="$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameRegistration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameSearch.form" afterPath="$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameSearch.form" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameSearch.java" afterPath="$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameSearch.java" />
     </list>
     <ignored path="PP.iws" />
@@ -69,16 +71,62 @@
       <file leaf-file-name="PersonDaoJdbcImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/PersonDaoJdbcImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="66" />
+            <state relative-caret-position="387">
+              <caret line="50" column="56" selection-start-line="50" selection-start-column="56" selection-end-line="50" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#insert#0;class#PersonDaoJdbcImpl#0" expanded="false" />
-                <marker date="1466750632299" expanded="true" signature="331:344" ph="SELECT * FRO... " />
-                <marker date="1466750632299" expanded="true" signature="331:360" ph="SELECT * FRO... patient" />
-                <marker date="1466750632299" expanded="true" signature="404:580" ph="INSERT INTO patient.patient... " />
+                <marker date="1467206878048" expanded="true" signature="243:273" ph="SELECT * FRO... patient" />
+                <marker date="1467206878048" expanded="true" signature="243:285" ph="SELECT * FRO... patient" />
+                <marker date="1467206878048" expanded="true" signature="333:346" ph="SELECT * FRO... " />
+                <marker date="1467206878048" expanded="true" signature="333:362" ph="SELECT * FRO... patient" />
+                <marker date="1467206878048" expanded="true" signature="406:582" ph="INSERT INTO patient.patient... " />
+                <marker date="1467206878048" expanded="true" signature="626:680" ph="UPDATE SET w... " />
+                <marker date="1467206878048" expanded="true" signature="626:682" ph="UPDATE SET w... " />
+                <marker date="1467206878048" expanded="true" signature="626:688" ph="UPDATE SET w... " />
+                <marker date="1467206878048" expanded="true" signature="826:853" ph="DELETE FROM " />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FrameRegistration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameRegistration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="149" column="5" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Frame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/Frame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="62" column="107" selection-start-line="62" selection-start-column="107" selection-end-line="62" selection-end-column="107" />
+              <folding>
+                <element signature="e#878#1169#0" expanded="false" />
+                <element signature="e#1168#1169#0" expanded="false" />
+                <element signature="e#1220#1395#0" expanded="false" />
+                <element signature="e#1340#1341#0" expanded="true" />
+                <element signature="e#1384#1385#0" expanded="true" />
+                <element signature="e#1394#1395#0" expanded="false" />
+                <element signature="e#1452#1851#0" expanded="false" />
+                <element signature="e#1850#1851#0" expanded="false" />
+                <element signature="class#2307:2449" expanded="false" />
+                <element signature="class#2504:2646" expanded="false" />
+                <element signature="class#2701:2831" expanded="false" />
+                <element signature="method#errorMessage#0;class#Frame#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FrameSearch.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameSearch.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -89,11 +137,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConnectionFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/ConnectionFactory.java">
+      <file leaf-file-name="FrameSearch.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameSearch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+            <state relative-caret-position="430">
+              <caret line="94" column="34" selection-start-line="94" selection-start-column="34" selection-end-line="94" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Person.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/Person.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
+              <folding>
+                <element signature="method#Person#0;class#Person#0" expanded="false" />
+                <element signature="method#toString#0;class#Person#0" expanded="false" />
+                <element signature="method#control#0;class#Person#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/PersonDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -129,19 +201,20 @@
         <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FramePerson.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FramePerson.form" />
         <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/mics/Number.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameSearch.form" />
         <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/mics/CheckingFilling.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/DaoException.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/Person.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/PersonDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/Person.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameRegistration.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/PersonDaoJdbcImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/Frame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameSearch.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameRegistration.form" />
         <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/ConnectionFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/mics/PersonTableModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/PersonDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/PersonDaoJdbcImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameSearch.form" />
+        <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/Person.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameSearch.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/Frame.java" />
       </list>
     </option>
   </component>
@@ -169,7 +242,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="width" value="1370" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -222,9 +295,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -324,6 +395,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ld1995tut" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ld1995tut" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mics" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -471,6 +572,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -487,12 +590,12 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="by.ld1995tut" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\1\Desktop\PP\lib" />
       <recent name="C:\Users\1\Desktop\PP\src\main\java\by\ld1995tut\Frame" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="by.ld1995tut" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Unnamed">
@@ -934,14 +1037,17 @@
       <workItem from="1466586025423" duration="5609000" />
       <workItem from="1466597074636" duration="14774000" />
       <workItem from="1466772229470" duration="875000" />
+      <workItem from="1467005036375" duration="27000" />
+      <workItem from="1467178207093" duration="5119000" />
+      <workItem from="1467202689401" duration="6650000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72715000" />
+    <option name="totallyTimeSpent" value="84511000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -956,7 +1062,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1762481" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17557251" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -993,7 +1099,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/PersonDaoJdbcImpl.java</url>
-          <line>72</line>
+          <line>94</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
@@ -1007,48 +1113,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../TelegramWindow/src/by/ld1995tut/mics/Reg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="5" selection-start-line="8" selection-start-column="3" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Пк/Уроки/4 модуль/StringExperiments 4.7/src/Loader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="32" column="55" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TelegramWindow/src/by/ld1995tut/FrameWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TelegramWindow/src/by/ld1995tut/Contacts/ContactsForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TelegramWindow/src/by/ld1995tut/Frame/Registration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" column="85" selection-start-line="17" selection-start-column="8" selection-end-line="18" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TelegramWindow/src/by/ld1995tut/Frame/FrameNumber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="53" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../TelegramWindow/src/by/ld1995tut/Frame/Frame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1081,22 +1145,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/mics/NumberFilling.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/50fdd384/dc031b03-52eb-4b14-9c5b-646bbf520a24/patient.patient">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1133,16 +1190,6 @@
         <state relative-caret-position="204">
           <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="60" selection-end-column="5" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameSearch.form">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://D:/Пк/Уроки/MySQL/src/main/java/by/ld1995/Main.java">
@@ -1213,40 +1260,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameRegistration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/PersonDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
-          <folding>
-            <element signature="method#Person#0;class#Person#0" expanded="false" />
-            <element signature="method#toString#0;class#Person#0" expanded="false" />
-            <element signature="method#control#0;class#Person#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1264,28 +1277,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/Frame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#881#1170#0" expanded="false" />
-            <element signature="e#1169#1170#0" expanded="false" />
-            <element signature="class#2111:2253" expanded="false" />
-            <element signature="class#2308:2450" expanded="false" />
-            <element signature="class#2505:2635" expanded="false" />
-            <element signature="method#errorMessage#0;class#Frame#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Loader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <element signature="e#182#736#0" expanded="true" />
-            <element signature="e#735#736#0" expanded="true" />
+            <element signature="e#182#736#0" expanded="false" />
+            <element signature="e#735#736#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1346,35 +1344,170 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/ConnectionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_92/src.zip!/javax/swing/JComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="245" column="32" selection-start-line="245" selection-start-column="32" selection-end-line="245" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/mics/NumberFilling.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/mics/PersonTableModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_92/src.zip!/java/sql/Statement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="64" column="10" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_92/src.zip!/java/sql/ResultSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="147" column="20" selection-start-line="147" selection-start-column="20" selection-end-line="147" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/PersonDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Пк/Уроки/4 модуль/StringExperiments 4.7/src/Loader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="41" column="15" selection-start-line="23" selection-start-column="0" selection-end-line="41" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameSearch.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
+          <folding>
+            <element signature="method#Person#0;class#Person#0" expanded="false" />
+            <element signature="method#toString#0;class#Person#0" expanded="false" />
+            <element signature="method#control#0;class#Person#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="94" column="34" selection-start-line="94" selection-start-column="34" selection-end-line="94" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameRegistration.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/FrameRegistration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="149" column="5" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/ConnectionFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Frame/Frame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        <state relative-caret-position="166">
+          <caret line="62" column="107" selection-start-line="62" selection-start-column="107" selection-end-line="62" selection-end-column="107" />
+          <folding>
+            <element signature="e#878#1169#0" expanded="false" />
+            <element signature="e#1168#1169#0" expanded="false" />
+            <element signature="e#1220#1395#0" expanded="false" />
+            <element signature="e#1340#1341#0" expanded="true" />
+            <element signature="e#1384#1385#0" expanded="true" />
+            <element signature="e#1394#1395#0" expanded="false" />
+            <element signature="e#1452#1851#0" expanded="false" />
+            <element signature="e#1850#1851#0" expanded="false" />
+            <element signature="class#2307:2449" expanded="false" />
+            <element signature="class#2504:2646" expanded="false" />
+            <element signature="class#2701:2831" expanded="false" />
+            <element signature="method#errorMessage#0;class#Frame#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_92/src.zip!/java/util/Formatter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4301" column="0" selection-start-line="4301" selection-start-column="0" selection-end-line="4301" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/ld1995tut/Dao/PersonDaoJdbcImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="66" />
+        <state relative-caret-position="387">
+          <caret line="50" column="56" selection-start-line="50" selection-start-column="56" selection-end-line="50" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#insert#0;class#PersonDaoJdbcImpl#0" expanded="false" />
-            <marker date="1466750632299" expanded="true" signature="331:344" ph="SELECT * FRO... " />
-            <marker date="1466750632299" expanded="true" signature="331:360" ph="SELECT * FRO... patient" />
-            <marker date="1466750632299" expanded="true" signature="404:580" ph="INSERT INTO patient.patient... " />
+            <marker date="1467206878048" expanded="true" signature="243:273" ph="SELECT * FRO... patient" />
+            <marker date="1467206878048" expanded="true" signature="243:285" ph="SELECT * FRO... patient" />
+            <marker date="1467206878048" expanded="true" signature="333:346" ph="SELECT * FRO... " />
+            <marker date="1467206878048" expanded="true" signature="333:362" ph="SELECT * FRO... patient" />
+            <marker date="1467206878048" expanded="true" signature="406:582" ph="INSERT INTO patient.patient... " />
+            <marker date="1467206878048" expanded="true" signature="626:680" ph="UPDATE SET w... " />
+            <marker date="1467206878048" expanded="true" signature="626:682" ph="UPDATE SET w... " />
+            <marker date="1467206878048" expanded="true" signature="626:688" ph="UPDATE SET w... " />
+            <marker date="1467206878048" expanded="true" signature="826:853" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
