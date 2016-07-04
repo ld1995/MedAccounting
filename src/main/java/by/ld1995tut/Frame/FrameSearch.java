@@ -2,16 +2,13 @@ package by.ld1995tut.Frame;
 
 import by.ld1995tut.Dao.Person;
 import by.ld1995tut.mics.CheckingFilling;
-import by.ld1995tut.mics.NumberFilling;
-import by.ld1995tut.mics.PersonTableModel;
+import by.ld1995tut.mics.TablePerson;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import javax.swing.text.AbstractDocument;
 import javax.swing.text.Document;
 import javax.swing.text.JTextComponent;
 import java.awt.*;
-import java.util.*;
 import java.util.List;
 
 public class FrameSearch extends JPanel
@@ -66,7 +63,7 @@ public class FrameSearch extends JPanel
     }
 
     public void setTablePerson(List<Person> list) {
-        PersonTableModel model = new PersonTableModel();
+        TablePerson model = new TablePerson(list);
         this.tablePerson.setModel(model);
     }
 

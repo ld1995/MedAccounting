@@ -8,6 +8,7 @@ import by.ld1995tut.Dao.PersonDaoJdbcImpl;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class Frame extends JFrame
 {
@@ -28,7 +29,7 @@ public class Frame extends JFrame
             @Override
             public void actionPerformed(ActionEvent e)
             {
-//                frameSearch.setTablePerson(personDaoDao.getAll());
+                frameSearch.setTablePerson(personDao.getAll());
                 switchForm();
                 frameRegistration.cleanForm();
             }
