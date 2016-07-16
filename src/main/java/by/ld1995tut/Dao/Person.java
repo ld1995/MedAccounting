@@ -1,46 +1,77 @@
 package by.ld1995tut.Dao;
 
+import java.sql.Date;
+import java.sql.Time;
 import java.sql.Timestamp;
 
 public class Person
 {
+    private int id;
     private String wards;
     private int number;
-    private Timestamp dateAndTime;
+    private Date date;
+    private Time time;
     private String lastName;
     private String namePerson;
     private String secondName;
     private String organization;
-    private java.sql.Date age;
+    private Date age;
     private String diagnosis;
     private String inhabitation;
+    private Date discharge;
 
     public Person()
     {
 
     }
 
-    public Person(String wards, int number, Timestamp dateAndTime,
+    public Person(String wards, int number, Date date, Time time,
                   String lastName, String namePerson, String secondName,
-                  java.sql.Date age, String organization,
-                  String diagnosis, String inhabitation)
+                  String organization, java.sql.Date age,
+                  String diagnosis, String inhabitation, Date discharge)
     {
         this.wards = wards;
         this.number = number;
-        this.dateAndTime = dateAndTime;
+        this.date = date;
+        this.time = time;
         this.lastName = lastName;
         this.namePerson = namePerson;
         this.secondName = secondName;
-        this.age = age;
         this.organization = organization;
+        this.age = age;
         this.diagnosis = diagnosis;
         this.inhabitation = inhabitation;
+        this.discharge = discharge;
     }
 
-    public Person(String lastName, String namePerson, String secondName) {
+    public Person(int id, String wards, int number,
+                  Date date, Time time, String lastName,
+                  String namePerson, String secondName,
+                  String organization, Date age,
+                  String diagnosis, String inhabitation,
+                  Date discharge)
+    {
+        this.id = id;
+        this.wards = wards;
+        this.number = number;
+        this.date = date;
+        this.time = time;
         this.lastName = lastName;
         this.namePerson = namePerson;
         this.secondName = secondName;
+        this.organization = organization;
+        this.age = age;
+        this.diagnosis = diagnosis;
+        this.inhabitation = inhabitation;
+        this.discharge = discharge;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getWards() {
@@ -59,12 +90,20 @@ public class Person
         this.number = number;
     }
 
-    public Timestamp getDateAndTime() {
-        return dateAndTime;
+    public Time getTime() {
+        return time;
     }
 
-    public void setDateAndTime(Timestamp dateAndTime) {
-        this.dateAndTime = dateAndTime;
+    public void setTime(Time time) {
+        this.time = time;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getLastName() {
@@ -123,26 +162,17 @@ public class Person
         this.inhabitation = inhabitation;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "wards=" + wards +
-                ", number=" + number +
-                ", dateAndTime=" + dateAndTime +
-                ", lastName='" + lastName + '\'' +
-                ", namePerson='" + namePerson + '\'' +
-                ", secondName='" + secondName + '\'' +
-                ", age=" + age +
-                ", organization='" + organization + '\'' +
-                ", diagnosis='" + diagnosis + '\'' +
-                ", inhabitation='" + inhabitation + '\'' +
-                '}';
+    public java.sql.Date getDischarge() {
+        return discharge;
+    }
+
+    public void setDischarge(java.sql.Date discharge) {
+        this.discharge = discharge;
     }
 
     public boolean control()
     {
-        if (wards.isEmpty() || number ==0 && lastName.isEmpty() || namePerson.isEmpty() || secondName.isEmpty() || organization.isEmpty() ||
-        diagnosis.isEmpty() || inhabitation.isEmpty())
+        if (number == 0 || age.equals("00.00.0000") || lastName.isEmpty() || namePerson.isEmpty() || secondName.isEmpty())
         {
             return false;
         }

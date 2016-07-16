@@ -12,7 +12,7 @@ public class CheckingFilling extends DocumentFilter
 
             throws BadLocationException
     {
-        super.replace(fb, offset, length, text.replaceAll("[^А-ЯЁа-яё ]",""), attr);
+        super.replace(fb, offset, length, text.replaceAll("[^А-ЯЁа-яё]",""), attr);
     }
 
     @Override

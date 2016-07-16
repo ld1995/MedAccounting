@@ -1,11 +1,6 @@
 package by.ld1995tut.Dao;
 
-import com.mysql.fabric.jdbc.FabricMySQLDriver;
-import com.mysql.jdbc.MySQLConnection;
-
-import javax.swing.*;
 import java.sql.Connection;
-import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -13,8 +8,8 @@ public class ConnectionFactory
 {
     private static  final String MYSQLDRIVER = "com.mysql.jdbc.Driver";
     private static  final String URL = "jdbc:mysql://192.168.0.38:3306/patient";
-    private static  final String USERNAME = "user";
-    private static  final String PASSWORD = "bsmp1935";
+    private static  final String USERNAME = "admin";
+    private static  final String PASSWORD = "111";
     private static ConnectionFactory instance;
 
     private ConnectionFactory() {

@@ -12,12 +12,12 @@ public class NumberFilling extends DocumentFilter
 
             throws BadLocationException
     {
-        super.replace(fb, offset, length, text.replaceAll("[\\D]",""), attr);
+        super.replace(fb, offset, length, text.replaceAll("[^0-9.]",""), attr);
     }
 
     @Override
     public void insertString(FilterBypass fb, int offset, String string, AttributeSet attr) throws BadLocationException
     {
-        fb.insertString(offset, string.replaceAll("[\\D]",""), attr);
+        fb.insertString(offset, string.replaceAll("[^0-9.]",""), attr);
     }
 }

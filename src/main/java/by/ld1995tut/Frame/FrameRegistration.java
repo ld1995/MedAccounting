@@ -1,24 +1,19 @@
 package by.ld1995tut.Frame;
 
 import by.ld1995tut.Dao.Person;
-import by.ld1995tut.mics.CheckingFilling;
-import by.ld1995tut.mics.NumberFilling;
+import by.ld1995tut.mics.*;
 import javax.swing.*;
-import javax.swing.text.AbstractDocument;
-import javax.swing.text.DefaultFormatterFactory;
-import javax.swing.text.MaskFormatter;
-import java.sql.Timestamp;
+import javax.swing.text.*;
+import java.text.*;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class FrameRegistration extends JPanel {
     private JPanel rootPanel;
-    private JPanel top;
+    private JPanel topPanel;
     private JComboBox wards;
     private JPanel center;
     private JFormattedTextField number;
-    private JFormattedTextField dateAndTime;
     private JTextField lastName;
     private JTextField secondName;
     private JTextField namePerson;
@@ -28,20 +23,33 @@ public class FrameRegistration extends JPanel {
     private JEditorPane diagnosis;
     private JEditorPane inhabitation;
     private JButton save;
+    private JFormattedTextField timeOfReceipt;
+    private JFormattedTextField dateOfReceipt;
+    private JFormattedTextField dateDischarge;
 
-    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm");
-    private SimpleDateFormat dateHB = new SimpleDateFormat("dd.MM.yyyy");
-    private Date date = new Date();
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+    private SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
 
-    public FrameRegistration() {
+    public FrameRegistration()
+    {
         try {
-            MaskFormatter dateMask = new MaskFormatter("##.##.#### ##:##");
+            MaskFormatter timeMask = new MaskFormatter("##:##");
+            timeMask.setPlaceholder(null);
+            timeMask.setPlaceholderCharacter(' ');
+            timeOfReceipt.setFormatterFactory(new DefaultFormatterFactory(timeMask));
+            MaskFormatter dateMask = new MaskFormatter("##.##.####");
             dateMask.setPlaceholder(null);
             dateMask.setPlaceholderCharacter(' ');
-            dateAndTime.setFormatterFactory(new DefaultFormatterFactory(dateMask));
-            MaskFormatter dateHB = new MaskFormatter("##.##.####");
-            age.setFormatterFactory(new DefaultFormatterFactory(dateHB));
-            setDatePerson(date);
+            dateOfReceipt.setFormatterFactory(new DefaultFormatterFactory(dateMask));
+            MaskFormatter ageMask = new MaskFormatter("##.##.####");
+            ageMask.setPlaceholder(null);
+            ageMask.setPlaceholderCharacter('_');
+            age.setFormatterFactory( new DefaultFormatterFactory(dateMask));
+            MaskFormatter dateMaskD = new MaskFormatter("##.##.####");
+            ageMask.setPlaceholder(null);
+            ageMask.setPlaceholderCharacter('_');
+            dateDischarge.setFormatterFactory( new DefaultFormatterFactory(dateMaskD));
+            cleanForm();
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -53,27 +61,40 @@ public class FrameRegistration extends JPanel {
             ((AbstractDocument) secondName.getDocument()).setDocumentFilter(new CheckingFilling());
         if (namePerson.getDocument() instanceof AbstractDocument)
             ((AbstractDocument) namePerson.getDocument()).setDocumentFilter(new CheckingFilling());
+        if (organization.getDocument() instanceof AbstractDocument)
+            ((AbstractDocument) organization.getDocument()).setDocumentFilter(new DocumentTextLimit(299));
+        if (diagnosis.getDocument() instanceof AbstractDocument)
+            ((AbstractDocument) diagnosis.getDocument()).setDocumentFilter(new DocumentTextLimit(299));
+        if (inhabitation.getDocument() instanceof AbstractDocument)
+            ((AbstractDocument) inhabitation.getDocument()).setDocumentFilter(new DocumentTextLimit(299));
     }
 
-    public JPanel getRootPanel() {
+    public JPanel getRootPanel()
+    {
         return rootPanel;
     }
 
-    public String getWards() {
+    public String getWards()
+    {
         String getWards = (String) wards.getSelectedItem();
         return getWards;
     }
 
-    public int getNumber() {
-        return Integer.parseInt(number.getText());
+    public int getNumber()
+    {
+        if (!number.getText().equals(""))
+            return Integer.parseInt(number.getText());
+        else
+            return 0;
     }
 
-    public String getDateAndTime() {
-        return dateAndTime.getText();
+    public String getTimeOfReceipt()
+    {
+        return timeOfReceipt.getText();
     }
 
-    public void setDateAndTime(String dateAndTime) {
-        this.dateAndTime.setText(dateAndTime);
+    public String getDateOfReceipt() {
+        return dateOfReceipt.getText();
     }
 
     public String getLastName() {
@@ -96,8 +117,12 @@ public class FrameRegistration extends JPanel {
         return organization.getText();
     }
 
-    public String getAge() {
-        return age.getText();
+    public String getAge()
+    {
+        if (!age.getText().equals("  .  .    "))
+            return age.getText();
+        else
+            return "00.00.0000";
     }
 
     public String getDiagnosis() {
@@ -112,55 +137,31 @@ public class FrameRegistration extends JPanel {
         return save;
     }
 
-    private Timestamp getDatePerson()
+    public java.sql.Time getTimePerson(String time)
     {
-        Date docDate = null;
-        try {
-            docDate = dateFormat.parse(getDateAndTime());
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        java.sql.Timestamp timestamp = new java.sql.Timestamp(docDate.getTime());
-        return timestamp;
+        return DateFormatSQL.getTimePerson(time);
     }
 
-    private java.sql.Date getAgePerson()
+    public java.sql.Date getDatePerson(String date)
     {
-        Date docAge = null;
-        try {
-            docAge = dateHB.parse(getAge());
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        java.sql.Date sqlDate = new java.sql.Date(docAge.getTime());
-        return sqlDate;
+        return DateFormatSQL.getSearchDate(date);
     }
 
-    public Person getPerson()
+    public String getDateDischarge()
     {
-        Person person = new Person(getWards(), getNumber(),
-                getDatePerson(), getLastName(),
-                getNamePerson(), getSecondName(),
-                getAgePerson(), getOrganization(),
-                getDiagnosis(), getInhabitation());
-        return person;
+        if (!dateDischarge.getText().equals("  .  .    "))
+            return dateDischarge.getText();
+        else
+            return "00.00.0000";
     }
 
-    public void cleanForm()
-    {
-        setDatePerson(new Date());
-        setAge("");
-        setNamePerson("");
-        setNumber("");
-        setLastName("");
-        setSecondName("");
-        setOrganization("");
-        setDiagnosis("");
-        setInhabitation("");
+    public void setDateOfReceipt(String date) {
+        this.dateOfReceipt.setText(date);
     }
 
-    private void setDatePerson(Date date) {
-        setDateAndTime(dateFormat.format(date));
+    public void setTimeOfReceipt(String timeOfReceipt)
+    {
+        this.timeOfReceipt.setText(timeOfReceipt);
     }
 
     public void setNumber(String number) {
@@ -193,5 +194,34 @@ public class FrameRegistration extends JPanel {
 
     public void setInhabitation(String inhabitation) {
         this.inhabitation.setText(inhabitation);
+    }
+
+    public void setDateDischarge(String dateDischarge) {
+        this.dateDischarge.setText(dateDischarge);
+    }
+
+    public Person getPerson()
+    {
+        Person person = new Person(getWards(), getNumber(),
+                getDatePerson(getDateOfReceipt()), getTimePerson(getTimeOfReceipt()),
+                getLastName(), getNamePerson(), getSecondName(),
+                getOrganization(), getDatePerson(getAge()),
+                getDiagnosis(), getInhabitation(), getDatePerson(getDateDischarge()));
+        return person;
+    }
+
+    public void cleanForm()
+    {
+        setTimeOfReceipt(timeFormat.format(new Date()));
+        setDateOfReceipt(dateFormat.format(new Date()));
+        setAge("");
+        setNamePerson("");
+        setNumber("");
+        setLastName("");
+        setSecondName("");
+        setOrganization("");
+        setDiagnosis("");
+        setInhabitation("");
+        setDateDischarge("");
     }
 }

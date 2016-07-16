@@ -8,57 +8,154 @@ import java.util.List;
 
 public class PersonDaoJdbcImpl implements PersonDao
 {
-    public static final String SELECT_BY_NAME = "SELECT * FROM patient.patient SET name = ?";
+    public static final String SELECT_BY_NAME = "SELECT * FROM patient.patient WHERE last = ?";
+    public static final String SELECT_BY_DATE = "SELECT * FROM patient.patient WHERE date = ?";
+    public static final String SELECT_BY_DATE_DISCHARGE = "SELECT * FROM patient.patient WHERE discharge = ?";
+    public static final String SELECT_BY_WARDS = "SELECT * FROM patient.patient WHERE wards = ?";
     public static final String SELECT_ALL = "SELECT * FROM patient.patient";
     public static final String INSERT = "INSERT INTO patient.patient " +
-            "(wards, number, date, last, fast, second, organization, age, diagnosis, inhabitation)" +
-            " VALUES (?,?,?,?,?,?,?,?,?,?)";
-    public static final String UPDATE = "UPDATE patient.patient SET wards = ?, WHERE namber = ? , SET t";
-//    public static final String DELETE_BY_ID_QUERY = "DELETE FROM authors WHERE id = ?";
+            "(wards, number, date, time, last, fast, second, organization, age, diagnosis, inhabitation, discharge)" +
+            " VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+    public static final String UPDATE = "UPDATE patient.patient SET wards = ?, number = ?, date = ?, time = ?, last = ?, " +
+            "fast = ?, second = ?, organization = ?, age = ?, diagnosis = ?, inhabitation = ?, discharge = ? WHERE id = ?";
+    public static final String DELETE_BY_ID_QUERY = "DELETE FROM patient.patient WHERE id = ?";
     public static final String DELETE_ALL = "DELETE FROM patient.patient";
 
-    public static final String WARDS = "Отделение";
-    public static final String NUMBER= "Номер";
-    public static final String DATE_AND_TIME = "Дата";
-    public static final String LAST = "Фамилия";
-    public static final String NAME = "Имя";
-    public static final String SECOND = "Отчество";
-    public static final String ORGANIZATION = "Организация";
-    public static final String DATA = "Возраст";
-    public static final String DIAGNOSIS = "Диагноз";
-    public static final String INHABITATION = "Прописка";
+    public static final String ID = "id";
+    public static final String WARDS = "wards";
+    public static final String NUMBER= "number";
+    public static final String DATE = "date";
+    public static final String TIME ="time";
+    public static final String LAST = "last";
+    public static final String FAST = "fast";
+    public static final String SECOND = "second";
+    public static final String ORGANIZATION = "organization";
+    public static final String DATA = "age";
+    public static final String DIAGNOSIS = "diagnosis";
+    public static final String INHABITATION = "inhabitation";
+    public static final String DISCHARGE = "discharge";
 
     private ConnectionFactory connectionFactory;
 
-    public PersonDaoJdbcImpl(ConnectionFactory connectionFactory) {
+    public PersonDaoJdbcImpl(ConnectionFactory connectionFactory)
+    {
         this.connectionFactory = connectionFactory;
     }
 
     @Override
-    public Person getByFIO(String last, String fast, String second) {
+    public List<Person> getByFIO(String last) {
+        ArrayList<Person> all = new ArrayList<>();
         try (Connection connection = connectionFactory.getConnection();
              PreparedStatement statement = (PreparedStatement) connection.prepareStatement(SELECT_BY_NAME);) {
-            statement.setString(5,last);
-            statement.setString(6,fast);
-            statement.setString(7,second);
+            statement.setString(1,last);
             try (ResultSet resultSet = statement.executeQuery();) {
                 while (resultSet.next()) {
-                    return new Person(resultSet.getString(WARDS),
+                    all.add(new Person(resultSet.getInt(ID),
+                            resultSet.getString(WARDS),
                             resultSet.getInt(NUMBER),
-                            resultSet.getTimestamp(DATE_AND_TIME),
+                            resultSet.getDate(DATE),
+                            resultSet.getTime(TIME),
                             resultSet.getString(LAST),
-                            resultSet.getString(NAME),
+                            resultSet.getString(FAST),
                             resultSet.getString(SECOND),
-                            resultSet.getDate(DATA),
                             resultSet.getString(ORGANIZATION),
+                            resultSet.getDate(DATA),
                             resultSet.getString(DIAGNOSIS),
-                            resultSet.getString(INHABITATION));
+                            resultSet.getString(INHABITATION),
+                            resultSet.getDate(DISCHARGE)));
                 }
             }
         } catch (Exception e) {
-            throw new DaoException(String.format("Method getById(id: '%d') has thrown an exception.", last , fast , second), e);
+            throw new DaoException(String.format("Method getByFIO(id: '%d') has thrown an exception.", last ), e);
         }
-        return null;
+        return all;
+    }
+
+    @Override
+    public List<Person> getByDate(Date date) {
+        ArrayList<Person> all = new ArrayList<>();
+        try (Connection connection = connectionFactory.getConnection();
+             PreparedStatement statement = (PreparedStatement) connection.prepareStatement(SELECT_BY_DATE);) {
+            statement.setDate(1,date);
+            try (ResultSet resultSet = statement.executeQuery();) {
+                while (resultSet.next()) {
+                    all.add(new Person(resultSet.getInt(ID),
+                            resultSet.getString(WARDS),
+                            resultSet.getInt(NUMBER),
+                            resultSet.getDate(DATE),
+                            resultSet.getTime(TIME),
+                            resultSet.getString(LAST),
+                            resultSet.getString(FAST),
+                            resultSet.getString(SECOND),
+                            resultSet.getString(ORGANIZATION),
+                            resultSet.getDate(DATA),
+                            resultSet.getString(DIAGNOSIS),
+                            resultSet.getString(INHABITATION),
+                            resultSet.getDate(DISCHARGE)));
+                }
+            }
+        } catch (Exception e) {
+            throw new DaoException(String.format("Method getByFIO(id: '%d') has thrown an exception.", date), e);
+        }
+        return all;
+    }
+
+    @Override
+    public List<Person> getByWards(String wards) {
+        ArrayList<Person> all = new ArrayList<>();
+        try (Connection connection = connectionFactory.getConnection();
+             PreparedStatement statement = (PreparedStatement) connection.prepareStatement(SELECT_BY_WARDS);) {
+            statement.setString(1,wards);
+            try (ResultSet resultSet = statement.executeQuery();) {
+                while (resultSet.next()) {
+                    all.add(new Person(resultSet.getInt(ID),
+                            resultSet.getString(WARDS),
+                            resultSet.getInt(NUMBER),
+                            resultSet.getDate(DATE),
+                            resultSet.getTime(TIME),
+                            resultSet.getString(LAST),
+                            resultSet.getString(FAST),
+                            resultSet.getString(SECOND),
+                            resultSet.getString(ORGANIZATION),
+                            resultSet.getDate(DATA),
+                            resultSet.getString(DIAGNOSIS),
+                            resultSet.getString(INHABITATION),
+                            resultSet.getDate(DISCHARGE)));
+                }
+            }
+        } catch (Exception e) {
+            throw new DaoException(String.format("Method getByFIO(id: '%d') has thrown an exception.", wards), e);
+        }
+        return all;
+    }
+
+    @Override
+    public List<Person> getAll() {
+        ArrayList<Person> all = new ArrayList<>();
+        try (Connection connection = connectionFactory.getConnection();
+             Statement statement = connection.createStatement();) {
+            try (ResultSet resultSet = statement.executeQuery(SELECT_ALL);) {
+                while (resultSet.next()) {
+                    all.add(new Person(resultSet.getInt(ID),
+                            resultSet.getString(WARDS),
+                            resultSet.getInt(NUMBER),
+                            resultSet.getDate(DATE),
+                            resultSet.getTime(TIME),
+                            resultSet.getString(LAST),
+                            resultSet.getString(FAST),
+                            resultSet.getString(SECOND),
+                            resultSet.getString(ORGANIZATION),
+                            resultSet.getDate(DATA),
+                            resultSet.getString(DIAGNOSIS),
+                            resultSet.getString(INHABITATION),
+                            resultSet.getDate(DISCHARGE)
+                    ));
+                }
+            }
+        } catch (Exception e) {
+            throw new DaoException("Method getAll() has thrown an exception.", e);
+        }
+        return all;
     }
 
     @Override
@@ -68,14 +165,16 @@ public class PersonDaoJdbcImpl implements PersonDao
              PreparedStatement statement = (PreparedStatement) connection.prepareStatement(INSERT);) {
             statement.setString(1, person.getWards());
             statement.setInt(2, person.getNumber());
-            statement.setTimestamp(3, person.getDateAndTime());
-            statement.setString(4, person.getLastName());
-            statement.setString(5, person.getNamePerson());
-            statement.setString(6, person.getSecondName());
-            statement.setString(7, person.getOrganization());
-            statement.setDate(8,  person.getAge());
-            statement.setString(9, person.getDiagnosis());
-            statement.setString(10, person.getInhabitation());
+            statement.setDate(3, person.getDate());
+            statement.setTime(4, person.getTime());
+            statement.setString(5, person.getLastName());
+            statement.setString(6, person.getNamePerson());
+            statement.setString(7, person.getSecondName());
+            statement.setString(8, person.getOrganization());
+            statement.setDate(9,  person.getAge());
+            statement.setString(10, person.getDiagnosis());
+            statement.setString(11, person.getInhabitation());
+            statement.setDate(12,person.getDischarge());
             int i = statement.executeUpdate();
             if (i == 0) {
                 throw new DaoException("Table 'patient' was not updated", null);
@@ -86,55 +185,38 @@ public class PersonDaoJdbcImpl implements PersonDao
     }
 
     @Override
-    public List<Person> getAll() {
-        List<Person> all = new ArrayList<>();
-        try (Connection connection = connectionFactory.getConnection();
-             Statement statement = connection.createStatement();) {
-            try (ResultSet resultSet = statement.executeQuery(SELECT_ALL);) {
-                while (resultSet.next()) {
-                    all.add(new Person(resultSet.getString(WARDS),
-                            resultSet.getInt(NUMBER),
-                            resultSet.getTimestamp(DATE_AND_TIME),
-                            resultSet.getString(LAST),
-                            resultSet.getString(NAME),
-                            resultSet.getString(SECOND),
-                            resultSet.getDate(DATA),
-                            resultSet.getString(ORGANIZATION),
-                            resultSet.getString(DIAGNOSIS),
-                            resultSet.getString(INHABITATION)
-                            ));
-                }
-            }
-        } catch (Exception e) {
-            throw new DaoException("Method getAll() has thrown an exception.", e);
-        }
-        return all;
-    }
-
-    @Override
     public void update(Person person) {
         try (Connection connection = connectionFactory.getConnection();
              PreparedStatement statement = (PreparedStatement) connection.prepareStatement(UPDATE);) {
             statement.setString(1, person.getWards());
             statement.setInt(2, person.getNumber());
-            statement.setTimestamp(3, person.getDateAndTime());
-            statement.setString(4, person.getLastName());
-            statement.setString(5, person.getNamePerson());
-            statement.setString(6, person.getSecondName());
-            statement.setString(7, person.getOrganization());
-            statement.setDate(8,  person.getAge());
-            statement.setString(9, person.getDiagnosis());
-            statement.setString(10, person.getInhabitation());
+            statement.setDate(3, person.getDate());
+            statement.setTime(4, person.getTime());
+            statement.setString(5, person.getLastName());
+            statement.setString(6, person.getNamePerson());
+            statement.setString(7, person.getSecondName());
+            statement.setString(8, person.getOrganization());
+            statement.setDate(9,  person.getAge());
+            statement.setString(10, person.getDiagnosis());
+            statement.setString(11, person.getInhabitation());
+            statement.setDate(12, person.getDischarge());
+            statement.setInt(13, person.getId());
             statement.executeUpdate();
         } catch (Exception e) {
             throw new DaoException(String.format("Method update(author:'%s') has thrown an exception", person), e);
         }
     }
 
-
     @Override
-    public void deleteById(long id) {
-
+    public void deleteById(int id)
+    {
+        try (Connection connection = connectionFactory.getConnection();
+             PreparedStatement statement = (PreparedStatement) connection.prepareStatement(DELETE_BY_ID_QUERY);) {
+            statement.setInt(1, id);
+            statement.executeUpdate();
+        } catch (Exception e) {
+            throw new DaoException(String.format("Method deleteById(id:'%d') has thrown an exception", id), e);
+        }
     }
 
     @Override

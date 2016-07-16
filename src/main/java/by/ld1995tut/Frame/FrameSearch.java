@@ -2,13 +2,19 @@ package by.ld1995tut.Frame;
 
 import by.ld1995tut.Dao.Person;
 import by.ld1995tut.mics.CheckingFilling;
+import by.ld1995tut.mics.DateFormatSQL;
+import by.ld1995tut.mics.NumberFilling;
 import by.ld1995tut.mics.TablePerson;
-
 import javax.swing.*;
-import javax.swing.text.AbstractDocument;
-import javax.swing.text.Document;
-import javax.swing.text.JTextComponent;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
+import javax.swing.text.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class FrameSearch extends JPanel
@@ -17,21 +23,38 @@ public class FrameSearch extends JPanel
     private JPanel optionsPanel;
     private JButton search;
     private JButton delete;
-    private JButton edit;
     private JButton next;
     private JPanel navigationPanel;
     private JComboBox selection;
     private JPanel result;
-    private JTable tablePerson;
     private JButton save;
+    private JTable tablePerson;
+    private JButton reset;
+    private TablePerson model;
 
     public FrameSearch()
     {
         selection.setEditable(true);
-        Object editorComponent = selection.getEditor().getEditorComponent();
-        Document document = ((JTextComponent)editorComponent).getDocument();
-        if (document instanceof AbstractDocument)
-            ((AbstractDocument) document).setDocumentFilter(new CheckingFilling());
+        selection.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                if (selection.getSelectedItem().equals("Фамилия"))
+                {
+                    Object editorComponent = selection.getEditor().getEditorComponent();
+                    Document document = ((JTextComponent)editorComponent).getDocument();
+                    if (document instanceof AbstractDocument)
+                        ((AbstractDocument) document).setDocumentFilter(new CheckingFilling());
+                }
+                else if (selection.getSelectedItem().equals("Дата приёма"))
+                {
+                    Object editorComponent = selection.getEditor().getEditorComponent();
+                    Document document = ((JTextComponent)editorComponent).getDocument();
+                    if (document instanceof AbstractDocument)
+                        ((AbstractDocument) document).setDocumentFilter(new NumberFilling());
+                }
+            }
+        });
     }
 
     public JPanel getRootPanel() {
@@ -42,12 +65,9 @@ public class FrameSearch extends JPanel
         return search;
     }
 
-    public JButton getDelete() {
+    public JButton getDelete()
+    {
         return delete;
-    }
-
-    public JButton getEdit() {
-        return edit;
     }
 
     public JButton getNext() {
@@ -58,44 +78,34 @@ public class FrameSearch extends JPanel
         return save;
     }
 
-    public void setNavigationPanel(Component component) {
-        this.navigationPanel.add(component);
+    public JButton getReset() {
+        return reset;
     }
 
-    public void setTablePerson(List<Person> list) {
-        TablePerson model = new TablePerson(list);
+    public int getIdTablePerson()
+    {
+        Person id = model.getBeans().get(tablePerson.getSelectedRow());
+        return id.getId();
+    }
+
+    public Person update()
+    {
+        return model.getBeans().get(tablePerson.getSelectedRow());
+    }
+
+    public void setTableModel(List<Person> list)
+    {
+        this.model = new TablePerson(list);
         this.tablePerson.setModel(model);
     }
 
     public String getSelection() {
         String searchOptions = (String)selection.getSelectedItem();
-        return searchOptions;
+        return searchOptions.trim();
     }
 
-    public Person getPerson()
+    public Date getSearchDate(String date)
     {
-        String last = "";
-        String fast = "";
-        String second = "";
-        Person person;
-        String fIO = getSelection();
-        String fIOUser[] = fIO.split("\\s+");
-        if(fIOUser.length == 3)
-        {
-            if (fIOUser[0].matches("^[А-ЯЁ][а-яё]+(-[А-ЯЁ][а-яё]+)?$"))
-               last = fIOUser[0];
-            if (fIOUser[1].matches("^[А-ЯЁ][а-яё]+$"))
-               fast = fIOUser[1];
-            if (fIOUser[2].matches("^[А-ЯЁ][а-яё]+$"))
-               second = fIOUser[2];
-
-        person = new Person(last, fast, second);
-        return person;
-        }
-        else
-        {
-          return person = new Person();
-        }
+        return DateFormatSQL.getSearchDate(date);
     }
-
 }

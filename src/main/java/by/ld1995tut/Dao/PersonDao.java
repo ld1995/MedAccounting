@@ -1,10 +1,15 @@
 package by.ld1995tut.Dao;
 
+import java.sql.Date;
 import java.util.List;
 
 public interface PersonDao
 {
-    Person getByFIO(String last, String fast, String secong);
+    List<Person> getByFIO(String last);
+
+    List<Person> getByDate(Date date);
+
+    List<Person> getByWards(String wards);
 
     void insert(Person person);
 
@@ -12,7 +17,7 @@ public interface PersonDao
 
     void update(Person person);
 
-    void deleteById(long id);
+    void deleteById(int id);
 
     void deleteAll();
 }
